@@ -1,0 +1,32 @@
+{
+  "name": "sudhakar",
+  "version": "1.0.0",
+  "description": "Testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress-ntlm open",
+    "test:run": "cypress-ntlm run",
+    "test-open": "cypress open",
+    "test-run": "cypress run --spec \"cypress/integration/Proper_Video_Fail_Spec.js\"",
+    "test:smoke": "cypress run --env grepTags=\"Smoke\"",
+    "test:smoke:regression": "cypress run --env grep=\"Smoke; Regression\"",
+    "test:tag:sprint": "cypress run --env grepTags=\"Sprint\"",
+    "test:tag:sprintOrRegression": "cypress run --env grepTags=\"Sprint Regression \"",
+    "test:tag:sprintAndRegression": "cypress run --env grepTags=\"Sprint+Regression \"",
+    "test:tag:invertRegression": "cypress run --env grepTags=\"-Regression \" --spec \"cypress/integration/Group_TCS_2.js\""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@cypress/grep": "^3.1.5",
+    "cypress": "^12.11.0",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "install": "^0.13.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "step_definitions": "cypress/e2e",
+    "filterSpecs": true,
+    "omitFiltered": true
+  }
+}
