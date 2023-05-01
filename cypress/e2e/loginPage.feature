@@ -1,6 +1,6 @@
 Feature: Login functionality
      
-     @Smoke @Regression 
+     @Regression 
      Scenario: Login Page
      Given I am on empty home page
        
