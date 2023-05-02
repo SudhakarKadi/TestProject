@@ -16,9 +16,10 @@ jobs:
       # and run all Cypress tests
       - name: Cypress run
         uses: cypress-io/github-action@v5
+        with:
+          build: npm update
+          start: npx cypress run -e TAGS='@Regression or @Smoke' --browser chrome
       - run: node cypress-parallel.js | xargs npm run mocha
         env:
           CI_TOTAL: ${{ matrix.containers }}
-        with:
-          build: npm update
-          start: npx cypress run -e TAGS='@Regression or @Smoke' --browser chrome  
+          
