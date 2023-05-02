@@ -18,4 +18,5 @@ jobs:
         uses: cypress-io/github-action@v5
         with:
           build: npm update
-          start: npx cypress run -e TAGS='@Regression or @Smoke' --browser chrome
+          start: npx cypress run -e TAGS='@Regression or @Smoke' --browser chrome --spec $(node cypress-parallel.js ${{ matrix.containers }} 2)
+          
