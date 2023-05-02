@@ -13,5 +13,5 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v5
         with:
-          build: npm run build
-          start: npx cypress run -e TAGS='@Regression and  @Smoke' --browser chrome
+          build: npm update
+          start: npx cypress run -e TAGS='@Regression or @Smoke' --browser chrome

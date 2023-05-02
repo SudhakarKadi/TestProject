@@ -1,3 +1,4 @@
-vidoes
-screenshots
-node_modules
+videos/
+screenshots/
+node_modules/
+*.md
