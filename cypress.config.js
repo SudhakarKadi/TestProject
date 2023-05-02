@@ -11,7 +11,7 @@ module.exports = defineConfig({
    
   },
   env: {
-    url: 'test-vw-1.localhost.com:8003/',
+    url: 'https://test-vw-1--release-gz7y0.docker2.motocommerce.ca/en/search',
     "grepFilterSpecs": true,
     "grepOmitFiltered": true
     
