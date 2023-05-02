@@ -21,4 +21,4 @@ jobs:
           CI_TOTAL: ${{ matrix.containers }}
         with:
           build: npm update
-          start: npx cypress run -e TAGS='@Regression or @Smoke' --browser chrome        
+          start: npx cypress run -e TAGS='@Regression or @Smoke' --browser chrome  
