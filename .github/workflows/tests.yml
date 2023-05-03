@@ -5,6 +5,10 @@ on: push
 jobs:
   cypress-run:
     runs-on: ubuntu-22.04
+    strategy:
+            fail-fast: false
+            matrix:
+             containers: [ 0, 1 ]
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -14,5 +18,5 @@ jobs:
         uses: cypress-io/github-action@v5
         with:
           build: npm update
-          start: npx cypress run -e TAGS='@Regression or @Smoke' --browser chrome --spec $(node cypress-parallel.js ${{ matrix.containers }} 2)
+          start: npx cypress run -e TAGS='@Regression or @Smoke' --browser chrome --spec $(node cypress-partialparallel.js 2 ${{ matrix.containers }})
           
